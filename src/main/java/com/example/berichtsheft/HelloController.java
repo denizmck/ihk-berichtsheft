@@ -26,6 +26,7 @@ public class HelloController {
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
         loadedFile = fileChooser.showOpenDialog(new Stage());
 
+
         updateFileTextField();
         XMLReader.getReportsFromXML(loadedFile);
     }
