@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<reportlist>
+    <report>
+        <date>
+            <from>06.01.23</from>
+            <to>15.01.23</to>
+        </date>
+        <department>Schule</department>
+        <entrylist>
+            <entry title="LF10">
+                <item>Hausaufgaben Kontrolliert</item>
+                <item>Klausur vorbereitung</item>
+            </entry>
+            <entry title="LF09">
+                <item>Javaprogramm geschrieben</item>
+            </entry>
+        </entrylist>
+    </report>
+    <report>
+        <date>
+            <from>16.01.23</from>
+            <to>22.01.23</to>
+        </date>
+        <department>IT</department>
+        <entrylist>
+            <entry title="Blog">
+                <item>Bilder angepasst</item>
+                <item>Headerfarben geändert</item>
+            </entry>
+        </entrylist>
+    </report>
+</reportlist>
