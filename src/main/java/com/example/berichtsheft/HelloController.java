@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class HelloController {
     public Label lbl_file_reader;
-    public TextArea txa_json;
     public Menu men_report;
+    public ListView<Report> lsv_reportList;
 
     File loadedFile;
 
@@ -33,7 +33,8 @@ public class HelloController {
             tempText.append(reports.get(i).debug());
         }
 
-        txa_json.setText(tempText.toString());
+        lsv_reportList.getItems().addAll(reports);
+
         System.out.println(tempText);
         System.out.println("Done");
     }
