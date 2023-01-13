@@ -71,17 +71,21 @@ public class Report {
         return entries.get(index);
     }
 
-    public void debug(){
-        System.out.println("From       : " + startDate);
-        System.out.println("To         : " + endDate);
-        System.out.println("Department : " + department);
+    public String debug(){
+        String txtReport = "";
+
+        txtReport += "\nFrom       : " + startDate;
+        txtReport += "\nTo         : " + endDate;
+        txtReport += "\nDepartment : " + department;
         for(int i=0; i < entries.size(); i++){
             Entry tempEntry = entries.get(i);
-            System.out.println("\n" + tempEntry.getTitle());
+            txtReport += "\n\n" + tempEntry.getTitle();
             for(int n=0; n < tempEntry.items.size(); n++){
-                System.out.println("- " + tempEntry.items.get(n));
+                txtReport += "\n- " + tempEntry.items.get(n);
             }
         }
-        System.out.println("\n-------------------------------------------\n");
+        txtReport += "\n-------------------------------------------\n";
+
+        return txtReport;
     }
 }

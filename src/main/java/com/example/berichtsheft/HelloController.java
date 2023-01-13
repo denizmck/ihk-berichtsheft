@@ -1,9 +1,6 @@
 package com.example.berichtsheft;
 
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -12,9 +9,8 @@ import java.util.ArrayList;
 
 public class HelloController {
     public Label lbl_file_reader;
-    public TextField txt_file_reader;
-    public Button btn_file_reader;
     public TextArea txa_json;
+    public Menu men_report;
 
     File loadedFile;
 
@@ -26,12 +22,20 @@ public class HelloController {
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
         loadedFile = fileChooser.showOpenDialog(new Stage());
 
-
-        updateFileTextField();
-        XMLReader.getReportsFromXML(loadedFile);
+        reports = XMLReader.getReportsFromXML(loadedFile);
+        displayData();
+        men_report.setDisable(false);
     }
 
-    void updateFileTextField(){
-        txt_file_reader.setText(loadedFile.getAbsolutePath());
+    public void displayData(){
+        StringBuilder tempText = new StringBuilder();
+        for (int i = 0; i < reports.size(); i++){
+            tempText.append(reports.get(i).debug());
+        }
+
+        txa_json.setText(tempText.toString());
+        System.out.println(tempText);
+        System.out.println("Done");
     }
+
 }

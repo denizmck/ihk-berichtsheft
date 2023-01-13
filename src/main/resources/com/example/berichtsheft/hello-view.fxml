@@ -4,22 +4,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.example.berichtsheft.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <children>
-      <Label fx:id="lbl_file_reader" maxWidth="1.7976931348623157E308" text="JSON File" />
-      <HBox prefHeight="100.0" prefWidth="200.0">
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.berichtsheft.HelloController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0">
          <children>
-            <TextField fx:id="txt_file_reader" editable="false" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets right="5.0" />
-               </HBox.margin>
-            </TextField>
-            <Button fx:id="btn_file_reader" mnemonicParsing="false" onMouseClicked="#openFileReader" prefWidth="100.0" text="Load" />
+            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+               <children>
+                  <Label fx:id="lbl_file_reader" maxWidth="1.7976931348623157E308" text="Berichtshefte" />
+                  <TextArea fx:id="txa_json" editable="false" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
          </children>
-      </HBox>
-      <TextArea fx:id="txa_json" prefHeight="200.0" prefWidth="200.0" />
-   </children>
-</VBox>
+      </VBox>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openFileReader" text="Load XML" />
+                  <MenuItem mnemonicParsing="false" text="Save XML" />
+                  <MenuItem mnemonicParsing="false" text="Export as *.txt" />
+            </items>
+          </Menu>
+            <Menu fx:id="men_report" disable="true" mnemonicParsing="false" text="Report">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Add Report" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
