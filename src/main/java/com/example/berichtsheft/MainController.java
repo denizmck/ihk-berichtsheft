@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.util.ArrayList;
 
-public class HelloController {
+public class MainController {
     public Label lbl_file_reader;
     public Menu men_report;
     public ListView<Report> lsv_reportList;
