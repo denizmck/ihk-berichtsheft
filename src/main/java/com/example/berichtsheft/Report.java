@@ -4,27 +4,35 @@ import java.util.ArrayList;
 
 public class Report {
 
+    int id;
     String startDate;
     String endDate;
     String department;
     ArrayList<Entry> entries;
 
-    public Report(){
+    public Report(int id){
+        this.id = id;
         entries = new ArrayList<>();
     }
 
-    public Report(String startDate, String endDate, String department){
+    public Report(int id, String startDate, String endDate, String department){
+        this.id = id;
         this.startDate  = startDate;
         this.endDate    = endDate;
         this.department = department;
         entries = new ArrayList<>();
     }
 
-    public Report(String startDate, String endDate, String department, ArrayList<Entry> entries){
+    public Report(int id, String startDate, String endDate, String department, ArrayList<Entry> entries){
+        this.id = id;
         this.startDate  = startDate;
         this.endDate    = endDate;
         this.department = department;
         this.entries = entries;
+    }
+
+    public int getId(){
+        return id;
     }
 
     public void setStartDate(String startDate) {

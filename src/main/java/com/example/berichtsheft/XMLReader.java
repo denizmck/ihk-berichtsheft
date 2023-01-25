@@ -67,7 +67,8 @@ public class XMLReader {
         loopThroughNodes(list, new Consumer<Element>() {
             @Override
             public void accept(Element element) {
-                Report tempReport = new Report();
+                int id = Integer.parseInt(element.getAttribute("id"));
+                Report tempReport = new Report(id);
 
                 getDateOfReport(element, tempReport);
                 getDepartmentOfReport(element, tempReport);
