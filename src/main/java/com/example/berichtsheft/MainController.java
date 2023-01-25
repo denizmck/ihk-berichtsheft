@@ -25,7 +25,7 @@ public class MainController {
 
     public void openFileReader(){
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select JSON");
+        fileChooser.setTitle("Select Report List");
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML", "*.xml"));
         loadedFile = fileChooser.showOpenDialog(new Stage());
 
