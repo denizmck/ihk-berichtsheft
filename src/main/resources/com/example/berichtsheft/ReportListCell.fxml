@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+         <children>
+            <VBox>
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Bericht vom :" />
+                  <Label fx:id="lbl_date" text="\$DATE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="50.0" HBox.hgrow="ALWAYS" />
+            <VBox maxHeight="1.7976931348623157E308">
+               <children>
+                  <Label maxHeight="1.7976931348623157E308" text="Department :" />
+                  <Label fx:id="lbl_department" maxHeight="1.7976931348623157E308" text="\$DEPARTMENT">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

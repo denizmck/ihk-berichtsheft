@@ -73,7 +73,6 @@ public class XMLReader {
                 getDepartmentOfReport(element, tempReport);
                 getEntries(element, tempReport);
 
-                tempReport.debug();
                 reportList.add(tempReport);
             }
         });

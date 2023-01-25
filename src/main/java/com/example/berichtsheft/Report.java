@@ -71,21 +71,7 @@ public class Report {
         return entries.get(index);
     }
 
-    public String debug(){
-        String txtReport = "";
-
-        txtReport += "\nFrom       : " + startDate;
-        txtReport += "\nTo         : " + endDate;
-        txtReport += "\nDepartment : " + department;
-        for(int i=0; i < entries.size(); i++){
-            Entry tempEntry = entries.get(i);
-            txtReport += "\n\n" + tempEntry.getTitle();
-            for(int n=0; n < tempEntry.items.size(); n++){
-                txtReport += "\n- " + tempEntry.items.get(n);
-            }
-        }
-        txtReport += "\n-------------------------------------------\n";
-
-        return txtReport;
+    public String getDateString(){
+        return startDate + " - " + endDate;
     }
 }

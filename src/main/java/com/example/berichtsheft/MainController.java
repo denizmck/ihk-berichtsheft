@@ -1,5 +1,7 @@
 package com.example.berichtsheft;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -15,6 +17,11 @@ public class MainController {
     File loadedFile;
 
     ArrayList<Report> reports = new ArrayList<>();
+    ObservableList<Report> reportObservableList;
+
+    public MainController(){
+        reportObservableList = FXCollections.observableArrayList();
+    }
 
     public void openFileReader(){
         FileChooser fileChooser = new FileChooser();
@@ -28,15 +35,11 @@ public class MainController {
     }
 
     public void displayData(){
-        StringBuilder tempText = new StringBuilder();
-        for (int i = 0; i < reports.size(); i++){
-            tempText.append(reports.get(i).debug());
-        }
+        reportObservableList.clear();
+        reportObservableList.addAll(reports);
 
-        lsv_reportList.getItems().addAll(reports);
-
-        System.out.println(tempText);
-        System.out.println("Done");
+        lsv_reportList.setItems(reportObservableList);
+        lsv_reportList.setCellFactory(reportListView -> new ReportListCell());
     }
 
 }
